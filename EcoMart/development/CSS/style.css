@@ -1,0 +1,127 @@
+body {
+    background-color: #D1FFBD;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+.navbar {
+   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+
+}
+.links {
+    display: flex;
+    gap: 15px;
+    margin-left: -220px;
+    align-items: center;
+}
+.links a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 18px;
+    font-weight: bold;
+}
+.links nav {
+    position: relative;
+    padding: 0 8px;
+}
+
+.links nav:not(:last-child)::after {
+    content: "|";
+    position: absolute;
+    right: -8px;
+    color: #009E0F;
+}
+.search {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #a5c7fe; /* The outer blue box */
+  border-radius: 4px;
+  padding: 3px 4px;
+  width: 250px;
+}
+
+.search input {
+  border: none;       /* Removes the internal box border */
+  outline: none;      /* Removes the glow when you click inside */
+  flex: 1;            /* Makes the text area take up all available space */
+  padding: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.search-icon {
+     color: #555; font-size: 18px;
+     }
+.mic-icon { 
+    color: #333; font-size: 18px; cursor: pointer;
+ }
+ .footer {    
+    color: black;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .links {
+        margin-left: -100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .logo img {
+        height: 60px;
+    }
+    
+    .links {
+        margin-left: 0;
+        flex-wrap: wrap;
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .links a {
+        font-size: 14px;
+    }
+}
+    
+
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #a5c7fe;
+  border-radius: 20px;
+  padding: 8px 12px;
+  width: 250px;
+}
+
+.search input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+
+
+
+
+
+
