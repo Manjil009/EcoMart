@@ -39,12 +39,49 @@
 
         .eco-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
+        .eco-card {
+            position: relative;
+            overflow: hidden;
+        }
+
         .eco-card img { 
             width: 100%; 
             height: 200px; 
             object-fit: cover; 
             border-radius: 8px; 
             margin-bottom: 15px;
+        }
+
+        .add-to-cart-overlay {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            height: 200px;
+            background-color: rgba(0, 158, 15, 0.85);
+            border-radius: 8px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .eco-card:hover .add-to-cart-overlay {
+            display: flex;
+        }
+
+        .add-to-cart-overlay button {
+            background-color: #FF9900;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .add-to-cart-overlay button:hover {
+            background-color: #E68A00;
         }
     </style>
 </head>
@@ -63,7 +100,7 @@
         </div>
         <div class="search"><input type="text" placeholder="Search for Products"></div>
          <div class="cart">
-            <a href="form.html" style="font-size: 2rem;">🛒</a>
+            <a href="cart.html" style="font-size: 2rem;">🛒</a>
          </div>
     </div>
 
@@ -73,29 +110,82 @@
     </div>
 
     <div class="product-display">
-        <div class="eco-card">
+        <div class="eco-card" data-name="Eco Flask" data-price="1500" data-image="../Assets/Images/Flask.jpg">
             <img src="../Assets/Images/Flask.jpg" alt="Flask">
+            <div class="add-to-cart-overlay">
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
             <h3>Eco Flask</h3>
             <p>Sustainable steel hydration designed to last a lifetime.</p>
         </div>
 
-        <div class="eco-card">
+        <div class="eco-card" data-name="Bamboo Brush" data-price="500" data-image="..\Assets\Images\Bamboo Brush.jpg">
             <img src="..\Assets\Images\Bamboo Brush.jpg" alt="Brush">
+            <div class="add-to-cart-overlay">
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
             <h3>Bamboo Brush</h3>
             <p>Zero-waste dental care with biodegradable handles.</p>
-        </div> <div class="eco-card">
+        </div>
+
+        <div class="eco-card" data-name="Bamboo Bottle" data-price="3000" data-image="../Assets/Images/Bamboo_Bottle.webp">
             <img src="../Assets/Images/Bamboo_Bottle.webp" alt="Bamboo Bottle">
+            <div class="add-to-cart-overlay">
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
             <h3>Bamboo Bottle</h3>
             <p>Natural bamboo exterior with high-grade insulation.</p>
         </div>
 
-        <div class="eco-card">
+        <div class="eco-card" data-name="Tote Bag" data-price="1500" data-image="../Assets/Images/tote_bag17.webp">
             <img src="../Assets/Images/tote_bag17.webp" alt="Tote Bag">
+            <div class="add-to-cart-overlay">
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
             <h3>Tote Bag</h3>
             <p>Durable organic cotton for your daily essentials.</p>
         </div>
     </div>
 
     <footer class="footer" style="text-align: center; padding: 20px;"><p>&copy; 2026 EcoMart. All rights reserved.</p></footer>
+    
+    <script>
+        function addToCart(button) {
+            // Get the product card
+            var card = button.closest('.eco-card');
+            
+            // Get product information
+            var name = card.getAttribute('data-name');
+            var price = card.getAttribute('data-price');
+            var image = card.getAttribute('data-image');
+            
+            // Get cart from browser storage
+            var cartData = localStorage.getItem('cartItems');
+            var cart = [];
+            
+            // If cart exists, convert it from text to object
+            if (cartData != null) {
+                cart = JSON.parse(cartData);
+            }
+            
+            // Create product object
+            var product = {
+                id: Date.now(),
+                name: name,
+                price: price,
+                image: image,
+                quantity: 1
+            };
+            
+            // Add product to cart
+            cart.push(product);
+            
+            // Save cart back (convert object to text)
+            localStorage.setItem('cartItems', JSON.stringify(cart));
+            
+            // Show message
+            alert(name + ' added to cart!');
+        }
+    </script>
 </body>
 </html>
