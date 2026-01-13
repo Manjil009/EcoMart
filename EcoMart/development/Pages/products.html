@@ -1,29 +1,57 @@
 <html>
-
 <head>
-    <title>Home</title>
+    <title>Products - EcoMart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css">
     <style>
-        .select a { color: #FF9900; }
-        .selected a { color: #009E0F; }
-        .products-section {
-            margin: 20px;
-            padding: 20px;
-            border: 3px solid #333;
-            border-radius: 5px;
-            background-color: #D1FFBD;
-            min-height: 400px;
-        }
+        .select a { color: #FF9900; text-decoration: none; }
+        .selected a { color: #009E0F; text-decoration: none; font-weight: bold; }
+        
        
+        .hero-section {
+            background-color: #f0fdf0; 
+            padding: 60px 5%;
+            text-align: center;
+            border-bottom: 2px solid #009E0F;
+        }
+        .hero-section h1 { color: #009E0F; font-size: 2.5rem; }
+
+        .product-display {
+            display: flex;
+            justify-content: center; 
+            gap: 30px;
+            padding: 50px 5%;
+            flex-wrap: wrap; 
+            align-items: stretch;
+        }
+
+        .eco-card {
+            width: 280px;
+            display: flex;
+            flex-direction: column; 
+            text-align: center;
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: white;
+            transition: 0.3s;
+        }
+
+        .eco-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        .eco-card img { 
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+            margin-bottom: 15px;
+        }
     </style>
 </head>
-  <body>
+<body>
     <div class="navbar">
       <div class="logo">
-          <a href="home.html">
-             <img src="../Assets/Images/logo.png" alt="EcoMart Logo" height="100">
-          </a>
+          <a href="home.html"><img src="../Assets/Images/logo.png" alt="EcoMart Logo" height="100"></a>
       </div>    
         <div class="links">
             <nav class="select"> <a href="home.html">Home</a> </nav>
@@ -33,15 +61,41 @@
             <nav class="select"> <a href="about.html">About Us</a> </nav>
             <nav class="select"> <a href="contact.html">Contact Us</a> </nav>
         </div>
-         <div class="search">
-            <input type="text" placeholder="Search for Products">
+        <div class="search"><input type="text" placeholder="Search for Products"></div>
+         <div class="cart">
+            <a href="form.html" style="font-size: 2rem;">🛒</a>
          </div>
     </div>
-       <fieldset class="Products-section">
-           <h1>Our Products</h1>
-       </fieldset>   
-         <footer class="footer">
-                <p>&copy; 2026 EcoMart. All rights reserved.</p>
-         </footer>  
-  </body>
+
+    <div class="hero-section">
+        <h1>Our Eco-Friendly Products</h1>
+        <p>Explore our carefully curated selection of sustainable alternatives for a cleaner planet.</p>
+    </div>
+
+    <div class="product-display">
+        <div class="eco-card">
+            <img src="../Assets/Images/Flask.jpg" alt="Flask">
+            <h3>Eco Flask</h3>
+            <p>Sustainable steel hydration designed to last a lifetime.</p>
+        </div>
+
+        <div class="eco-card">
+            <img src="..\Assets\Images\Bamboo Brush.jpg" alt="Brush">
+            <h3>Bamboo Brush</h3>
+            <p>Zero-waste dental care with biodegradable handles.</p>
+        </div> <div class="eco-card">
+            <img src="../Assets/Images/Bamboo_Bottle.webp" alt="Bamboo Bottle">
+            <h3>Bamboo Bottle</h3>
+            <p>Natural bamboo exterior with high-grade insulation.</p>
+        </div>
+
+        <div class="eco-card">
+            <img src="../Assets/Images/tote_bag17.webp" alt="Tote Bag">
+            <h3>Tote Bag</h3>
+            <p>Durable organic cotton for your daily essentials.</p>
+        </div>
+    </div>
+
+    <footer class="footer" style="text-align: center; padding: 20px;"><p>&copy; 2026 EcoMart. All rights reserved.</p></footer>
+</body>
 </html>
