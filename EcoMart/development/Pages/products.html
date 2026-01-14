@@ -98,7 +98,7 @@
             <nav class="select"> <a href="about.html">About Us</a> </nav>
             <nav class="select"> <a href="contact.html">Contact Us</a> </nav>
         </div>
-        <div class="search"><input type="text" placeholder="Search for Products"></div>
+        <div class="search"><input type="text" id="searchInput" placeholder="Search for Products" onkeyup="filterProducts(this.value)"></div>
          <div class="cart">
             <a href="cart.html" style="font-size: 2rem;">🛒</a>
          </div>
@@ -149,6 +149,7 @@
 
     <footer class="footer" style="text-align: center; padding: 20px;"><p>&copy; 2026 EcoMart. All rights reserved.</p></footer>
     
+    <script src="../js/script.js"></script>
     <script>
         function addToCart(button) {
             // Get the product card

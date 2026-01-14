@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Home</title>
+    <title>About</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css">
     <style>
@@ -25,16 +25,15 @@
             <nav class="select"> <a href="contact.html">Contact Us</a> </nav>
         </div>
          <div class="search">
-            
-            <input type="text" placeholder="Search for Products">
-           
+            <input type="text" id="searchInput" placeholder="Search for Products" onkeydown="handleSearchHome(event)">
          </div>
           <div class="cart">
-            <a href="form.html" style="font-size: 2rem;">🛒</a>
+            <a href="cart.html" style="font-size: 2rem;">🛒</a>
          </div>
     </div>
        <footer class="footer">
             <p>&copy; 2026 EcoMart. All rights reserved.</p>
        </footer>
+       <script src="../js/script.js"></script>
   </body>
 </html>

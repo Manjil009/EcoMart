@@ -106,10 +106,10 @@
             <nav class="select"> <a href="contact.html">Contact Us</a> </nav>
         </div>
          <div class="search">
-            <input type="text" placeholder="Search for Products">
+            <input type="text" id="searchInput" placeholder="Search for Products" onkeydown="handleSearchHome(event)">
          </div>
          <div class="cart">
-            <a href="cart.html" style="font-size: 2rem; text-decoration: none;">🛒</a>
+            <a href="cart.html" style="font-size: 2rem;">🛒</a>
          </div>
     </div>
 
@@ -141,5 +141,7 @@
     <footer class="footer">
         <p>&copy; 2026 EcoMart. All rights reserved.</p>
     </footer>
+    
+    <script src="../js/script.js"></script>
   </body>
 </html>
