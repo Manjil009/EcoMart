@@ -157,7 +157,7 @@
     <div class="navbar">
       <div class="logo">
           <a href="home.html">
-             <img src="../Assets/Images/logo.png" alt="EcoMart Logo" height="100">
+             <img src="..\Assets\Images\logo.png" alt="EcoMart Logo" height="100">
           </a>
       </div>    
         <div class="links">
@@ -168,11 +168,9 @@
             <nav class="select"> <a href="about.html">About Us</a> </nav>
             <nav class="selected"> <a href="contact.html">Contact Us</a> </nav>
         </div>
-         <div class="search">
-            <input type="text" id="searchInput" placeholder="Search for Products" onkeydown="handleSearchHome(event)">
-         </div>
+         
           <div class="cart">
-            <a href="form.html" style="font-size: 2rem;">🛒</a>
+            <a href="cart.html" style="font-size: 2rem;">🛒</a>
          </div>
  </div>
         <div class="contact-header">
@@ -204,7 +202,7 @@
                 <strong>⏰ Our Working Hours:</strong><br>
                 Sun - Fri: 10:00 AM to 5:00 PM
         </div>
-        <!-- Contact Form -->
+        
         <div class="Contact-Form">
             <h2>Contact Form</h2>
 
@@ -234,11 +232,7 @@
         </div>
     </div>
     </div>
-         <footer class="footer">
-             
-                 <p>&copy; 2026 EcoMart. All rights reserved.</p>
-            
-         </footer>
+         
          
          
   </body>
@@ -246,13 +240,13 @@
             function validateForm(event) {
                 event.preventDefault();
                 
-                // Get form values
+              
                 const fullname = document.getElementById('fullname').value.trim();
                 const email = document.getElementById('email').value.trim();
                 const phone = document.getElementById('phone').value.trim();
                 const message = document.getElementById('message').value.trim();
                 
-                // Clear previous error messages
+               
                 document.getElementById('nameError').textContent = '';
                 document.getElementById('emailError').textContent = '';
                 document.getElementById('phoneError').textContent = '';
@@ -260,7 +254,7 @@
                 
                 let isValid = true;
                 
-                // Validate Full Name
+               
                 if (fullname === '') {
                     document.getElementById('nameError').textContent = 'Full Name is required';
                     isValid = false;
@@ -272,7 +266,7 @@
                     isValid = false;
                 }
                 
-                // Validate Email
+               
                 if (email === '') {
                     document.getElementById('emailError').textContent = 'Email is required';
                     isValid = false;
@@ -281,7 +275,7 @@
                     isValid = false;
                 }
                 
-                // Validate Phone
+                
                 if (phone === '') {
                     document.getElementById('phoneError').textContent = 'Phone Number is required';
                     isValid = false;
@@ -290,7 +284,7 @@
                     isValid = false;
                 }
                 
-                // Validate Message
+              
                 if (message === '') {
                     document.getElementById('messageError').textContent = 'Message is required';
                     isValid = false;
@@ -299,17 +293,104 @@
                     isValid = false;
                 }
                 
-                // If all validations pass, submit the form
+                
                 if (isValid) {
                     alert('Thank you for contacting EcoMart! We will get back to you soon.');
                     document.getElementById('contactForm').reset();
                 }
             }
             
-            // Helper function to validate email
+            
             function isValidEmail(email) {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 return emailRegex.test(email);
             }
          </script>
+</html>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .contact-container {
+      display: flex;
+      justify-content: space-between;
+      border: 2px solid #FFA500;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #F5F5F5;
+    }
+
+    .contact-info, .company-description {
+      width: 48%;
+    }
+
+    .contact-info h2 {
+      color: #FFA500;
+      margin-bottom: 10px;
+    }
+
+    .contact-info p {
+      margin: 5px 0;
+      color: #333;
+    }
+
+    .social-icons {
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      margin-right: 10px;
+      text-decoration: none;
+      font-size: 20px;
+      color: black;
+    }
+
+    .company-description h3 {
+      color: #228B22;
+      margin-bottom: 10px;
+    }
+
+    .company-description p {
+      color: #333;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-container">
+    <div class="contact-info">
+      <h2>Our Ecomart</h2>
+      
+      <p>Kamalpokhari,Nepal</p>
+      <p>9761692968</p><br>
+      
+      <div class="social-icons">
+        <a href="#">ⓕ      ▶</a>
+        <a href="#">𝕏</a>
+        <a href="#">𝗧𝗶𝗸 𝗧𝗼𝗸</a>
+        <a href="#">🅾I𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦🅾</a>
+      </div>
+    </div>
+    <div class="company-description">
+      <h3>Our Motto!!</h3>
+      <p>Small choices today, greener tomorrow.</p><br>
+      <h3>Our Goal</h3>
+      <p>We work for our customer satisfaction.</p>
+    </div>
+  </div>
+  <div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3357.441346830945!2d85.32268482525392!3d27.71073172618068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1908c874a40b%3A0x87a26cbf3b75037c!2sKamal%20Pokhari!5e1!3m2!1sen!2snp!4v1768383713574!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  <footer class="footer">
+             
+                 <p>&copy; 2026 EcoMart. All rights reserved.</p>
+            
+         </footer>
+
+</body>
 </html>

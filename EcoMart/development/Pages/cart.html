@@ -4,115 +4,27 @@
     <title>Cart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css">
-    <style>
+    <style>  
         .cart-container {
             padding: 40px 5%;
             max-width: 1000px;
             margin: 0 auto;
+            min-height: 60vh;
         }
 
         .cart-container h2 {
             color: #FF9900;
             font-size: 2rem;
             margin-bottom: 30px;
-        }
-
-        .cart-items {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .cart-item {
-            display: flex;
-            gap: 20px;
-            border: 1px solid #eee;
-            padding: 15px;
-            border-radius: 8px;
-            align-items: center;
-            background-color: #f9f9f9;
-        }
-
-        .cart-item img {
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .item-details {
-            flex: 1;
-        }
-
-        .item-details h3 {
-            color: #FF9900;
-            margin: 0 0 10px 0;
-        }
-
-        .item-price {
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .remove-btn {
-            background-color: #FF6B6B;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .remove-btn:hover {
-            background-color: #FF5252;
-        }
-
-        .cart-summary {
-            margin-top: 40px;
-            border-top: 2px solid #FF9900;
-            padding-top: 20px;
-            text-align: right;
-        }
-
-        .cart-summary h3 {
-            color: #FF9900;
-            font-size: 1.5rem;
-        }
-
-        .empty-cart {
             text-align: center;
-            padding: 60px 20px;
-            color: #666;
         }
 
-        .empty-cart a {
-            display: inline-block;
-            margin-top: 20px;
-            background-color: #FF9900;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
+      
+        
 
-        .checkout-btn {
-            background-color: #FF9900;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            margin-top: 20px;
-        }
+       
 
-        .checkout-btn:hover {
-            background-color: #E68A00;
-        }
+        
     </style>
 </head>
 <body>
@@ -128,9 +40,7 @@
             <nav class="select"> <a href="about.html">About Us</a> </nav>
             <nav class="select"> <a href="contact.html">Contact Us</a> </nav>
         </div>
-        <div class="search">
-            <input type="text" id="searchInput" placeholder="Search for Products" onkeydown="handleSearchHome(event)">
-        </div>
+        
          <div class="cart">
             <a href="cart.html" style="font-size: 2rem;">🛒</a>
          </div>
@@ -146,80 +56,5 @@
     </footer>
 
     <script src="../js/script.js"></script>
-    <script>
-        function loadCart() {
-            // Get cart from browser storage
-            var cartData = localStorage.getItem('cartItems');
-            var cartContent = document.getElementById('cartContent');
-            
-            // If no items in cart
-            if (cartData == null || cartData == '') {
-                cartContent.innerHTML = '<div class="empty-cart"><p>Your cart is empty.</p><a href="products.html">Continue Shopping</a></div>';
-                return;
-            }
-            
-            // Convert cart data from text to object
-            var cart = JSON.parse(cartData);
-            
-            // Start building HTML
-            var html = '<div class="cart-items">';
-            var total = 0;
-            
-            // Loop through each product
-            for (var i = 0; i < cart.length; i++) {
-                var item = cart[i];
-                var itemTotal = parseFloat(item.price);
-                total = total + itemTotal;
-                
-                // Add product HTML
-                html = html + '<div class="cart-item">';
-                html = html + '<img src="' + item.image + '" alt="' + item.name + '">';
-                html = html + '<div class="item-details">';
-                html = html + '<h3>' + item.name + '</h3>';
-                html = html + '<div class="item-price">Rs ' + item.price + '</div>';
-                html = html + '</div>';
-                html = html + '<div style="text-align: right;">';
-                html = html + '<button class="remove-btn" onclick="removeItem(' + item.id + ')">Remove</button>';
-                html = html + '</div>';
-                html = html + '</div>';
-            }
-            
-            html = html + '</div>';
-            html = html + '<div class="cart-summary">';
-            html = html + '<h3>Total: Rs ' + total.toFixed(2) + '</h3>';
-            html = html + '<button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>';
-            html = html + '</div>';
-            
-            // Display the cart
-            cartContent.innerHTML = html;
-        }
-        
-        function removeItem(itemId) {
-            // Get cart
-            var cartData = localStorage.getItem('cartItems');
-            var cart = JSON.parse(cartData);
-            var newCart = [];
-            
-            // Keep items that don't match the itemId
-            for (var i = 0; i < cart.length; i++) {
-                if (cart[i].id != itemId) {
-                    newCart.push(cart[i]);
-                }
-            }
-            
-            // Save new cart
-            localStorage.setItem('cartItems', JSON.stringify(newCart));
-            loadCart();
-        }
-        
-        function checkout() {
-            alert('Thank you for your purchase!');
-            localStorage.removeItem('cartItems');
-            loadCart();
-        }
-        
-        // Load cart when page opens
-        loadCart();
-    </script>
 </body>
 </html>

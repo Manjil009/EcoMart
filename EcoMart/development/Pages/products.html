@@ -4,8 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css">
     <style>
-        .select a { color: #FF9900; text-decoration: none; }
-        .selected a { color: #009E0F; text-decoration: none; font-weight: bold; }
+        .select a { 
+            color: #FF9900; text-decoration: none; 
+        }
+        .selected a { 
+            color: #009E0F; text-decoration: none; font-weight: bold; 
+        }
         
        
         .hero-section {
@@ -14,7 +18,9 @@
             text-align: center;
             border-bottom: 2px solid #009E0F;
         }
-        .hero-section h1 { color: #009E0F; font-size: 2.5rem; }
+        .hero-section h1 { 
+            color: #009E0F; font-size: 2.5rem; 
+        }
 
         .product-display {
             display: flex;
@@ -37,7 +43,9 @@
             transition: 0.3s;
         }
 
-        .eco-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .eco-card:hover { 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+        }
 
         .eco-card {
             position: relative;
@@ -147,46 +155,10 @@
         </div>
     </div>
 
-    <footer class="footer" style="text-align: center; padding: 20px;"><p>&copy; 2026 EcoMart. All rights reserved.</p></footer>
+    <footer class="footer" >
+        <p>&copy; 2026 EcoMart. All rights reserved.</p>
+    </footer>
     
     <script src="../js/script.js"></script>
-    <script>
-        function addToCart(button) {
-            // Get the product card
-            var card = button.closest('.eco-card');
-            
-            // Get product information
-            var name = card.getAttribute('data-name');
-            var price = card.getAttribute('data-price');
-            var image = card.getAttribute('data-image');
-            
-            // Get cart from browser storage
-            var cartData = localStorage.getItem('cartItems');
-            var cart = [];
-            
-            // If cart exists, convert it from text to object
-            if (cartData != null) {
-                cart = JSON.parse(cartData);
-            }
-            
-            // Create product object
-            var product = {
-                id: Date.now(),
-                name: name,
-                price: price,
-                image: image,
-                quantity: 1
-            };
-            
-            // Add product to cart
-            cart.push(product);
-            
-            // Save cart back (convert object to text)
-            localStorage.setItem('cartItems', JSON.stringify(cart));
-            
-            // Show message
-            alert(name + ' added to cart!');
-        }
-    </script>
 </body>
 </html>
