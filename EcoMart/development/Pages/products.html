@@ -91,6 +91,25 @@
         .add-to-cart-overlay button:hover {
             background-color: #E68A00;
         }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #FF9900;
+            margin: 10px 0;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            margin-right: 10px;
+            font-size: 1rem;
+        }
+
+        .discounted-price {
+            color: #009E0F;
+            font-size: 1.3rem;
+        }
     </style>
 </head>
 <body>
@@ -118,40 +137,70 @@
     </div>
 
     <div class="product-display">
-        <div class="eco-card" data-name="Eco Flask" data-price="1500" data-image="../Assets/Images/Flask.jpg">
-            <img src="../Assets/Images/Flask.jpg" alt="Flask">
+        <div class="eco-card" data-name="Eco Flask" >
+            <img src="../Assets/Images/ecoflask.png" alt="Flask">
             <div class="add-to-cart-overlay">
-                <button onclick="addToCart(this)">Add to Cart</button>
+                <button onclick="addToCart">Add to Cart</button>
             </div>
             <h3>Eco Flask</h3>
+            <div class="price">Rs 1500</div>
             <p>Sustainable steel hydration designed to last a lifetime.</p>
         </div>
 
-        <div class="eco-card" data-name="Bamboo Brush" data-price="500" data-image="..\Assets\Images\Bamboo Brush.jpg">
+        <div class="eco-card" data-name="Bamboo Brush" >
             <img src="..\Assets\Images\Bamboo Brush.jpg" alt="Brush">
             <div class="add-to-cart-overlay">
-                <button onclick="addToCart(this)">Add to Cart</button>
+                <button onclick="addToCart">Add to Cart</button>
             </div>
             <h3>Bamboo Brush</h3>
+            <div class="price">
+                <span class="original-price">Rs 500</span>
+                <span class="discounted-price">Rs 400</span>
+            </div>
             <p>Zero-waste dental care with biodegradable handles.</p>
         </div>
 
-        <div class="eco-card" data-name="Bamboo Bottle" data-price="3000" data-image="../Assets/Images/Bamboo_Bottle.webp">
+        <div class="eco-card" data-name="Bamboo Bottle" >
             <img src="../Assets/Images/Bamboo_Bottle.webp" alt="Bamboo Bottle">
             <div class="add-to-cart-overlay">
-                <button onclick="addToCart(this)">Add to Cart</button>
+                <button onclick="addToCart">Add to Cart</button>
             </div>
             <h3>Bamboo Bottle</h3>
+            <div class="price">
+                <span class="original-price">Rs 3000</span>
+                <span class="discounted-price">Rs 2500</span>
+            </div>
             <p>Natural bamboo exterior with high-grade insulation.</p>
         </div>
 
-        <div class="eco-card" data-name="Tote Bag" data-price="1500" data-image="../Assets/Images/tote_bag17.webp">
+        <div class="eco-card" data-name="Tote Bag" >
             <img src="../Assets/Images/tote_bag17.webp" alt="Tote Bag">
             <div class="add-to-cart-overlay">
-                <button onclick="addToCart(this)">Add to Cart</button>
+                <button onclick="addToCart">Add to Cart</button>
             </div>
             <h3>Tote Bag</h3>
+            <div class="price">Rs 1500</div>
             <p>Durable organic cotton for your daily essentials.</p>
+        </div>
+
+        <div class="eco-card" data-name="Reusable Shopping Bag" >
+            <img src="../Assets/Images/shoppingbags.png" alt="Reusable Shopping Bag">
+            <div class="add-to-cart-overlay">
+                <button onclick="addToCart">Add to Cart</button>
+            </div>
+            <h3>Reusable Shopping Bag</h3>
+            <div class="price">Rs 50</div>
+            <p>Sturdy canvas bag that replaces plastic shopping bags.</p>
+        </div>
+
+            <div class="eco-card" data-name="Sunscreen" >
+            <img src="../Assets/Images/sunscream.png" alt="Sunscreen">
+            <div class="add-to-cart-overlay">
+                <button onclick="addToCart">Add to Cart</button>
+            </div>
+            <h3>Sunscreen</h3>
+            <div class="price">Rs 1200</div>
+            <p>Biodegradable toothbrush with soft natural bristles.</p>
         </div>
     </div>
 
@@ -159,6 +208,6 @@
         <p>&copy; 2026 EcoMart. All rights reserved.</p>
     </footer>
     
-    <script src="../js/script.js"></script>
+    
 </body>
 </html>
