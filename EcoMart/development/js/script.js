@@ -2,15 +2,15 @@
 function filterProducts(query) {
     const cards = document.querySelectorAll('.eco-card');
     const searchTerm = query.toLowerCase();
-    
+
     cards.forEach(card => {
         const name = card.getAttribute('data-name');
         const description = card.querySelector('p');
-        
+
         if (name && description) {
             const nameText = name.toLowerCase();
             const descText = description.textContent.toLowerCase();
-            
+
             if (nameText.includes(searchTerm) || descText.includes(searchTerm)) {
                 card.style.display = 'flex';
             } else {
@@ -50,21 +50,21 @@ window.addEventListener('load', function() {
 function addToCart(button) {
     // Get the product card
     var card = button.closest('.eco-card');
-    
+
     // Get product information
     var name = card.getAttribute('data-name');
     var price = card.getAttribute('data-price');
     var image = card.getAttribute('data-image');
-    
+
     // Get cart from browser storage
     var cartData = localStorage.getItem('cartItems');
     var cart = [];
-    
+
     // If cart exists, convert it from text to object
     if (cartData != null) {
         cart = JSON.parse(cartData);
     }
-    
+
     // Create product object
     var product = {
         id: Date.now(),
@@ -73,15 +73,23 @@ function addToCart(button) {
         image: image,
         quantity: 1
     };
-    
+
     // Add product to cart
     cart.push(product);
-    
+
     // Save cart back (convert object to text)
     localStorage.setItem('cartItems', JSON.stringify(cart));
-    
+
     // Show message
     alert(name + ' added to cart!');
+}
+
+// Checkout function
+function checkout() {
+    alert('Thank you for your purchase!');
+    localStorage.removeItem('cartItems');
+    // Reload the page to show empty cart
+    location.reload();
 }
 
 
