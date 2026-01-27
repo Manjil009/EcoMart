@@ -1,5 +1,6 @@
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Products - EcoMart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css">
@@ -10,17 +11,25 @@
         .selected a { 
             color: #009E0F; text-decoration: none; font-weight: bold; 
         }
-        
+        .search {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #a5c7fe;
+    border-radius: 20px;
+    padding: 5px 15px;
+    width: 250px;
+}
+
+        .search input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+}
        
-        .hero-section {
-            background-color: #f0fdf0; 
-            padding: 60px 5%;
-            text-align: center;
-            border-bottom: 2px solid #009E0F;
-        }
-        .hero-section h1 { 
-            color: #009E0F; font-size: 2.5rem; 
-        }
+       
 
         .product-display {
             display: flex;
@@ -82,7 +91,7 @@
             color: white;
             border: none;
             padding: 12px 25px;
-            font-size: 1rem;
+            font-size: 16px;
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
@@ -93,7 +102,7 @@
         }
 
         .price {
-            font-size: 1.2rem;
+            font-size: 19px;
             font-weight: bold;
             color: #FF9900;
             margin: 10px 0;
@@ -103,12 +112,12 @@
             text-decoration: line-through;
             color: #999;
             margin-right: 10px;
-            font-size: 1rem;
+            font-size: 16px;
         }
 
         .discounted-price {
             color: #009E0F;
-            font-size: 1.3rem;
+            font-size: 21px;
         }
     </style>
 </head>
@@ -118,16 +127,18 @@
           <a href="home.html"><img src="../Assets/Images/logo.png" alt="EcoMart Logo" height="100"></a>
       </div>    
         <div class="links">
-            <nav class="select"> <a href="home.html">Home</a> </nav>
+            <nav class="select"> <a href="../home.html">Home</a> </nav>
             <nav class="selected"> <a href="products.html">Products</a> </nav>
             <nav class="select"> <a href="blog.html">Blog</a> </nav>
             <nav class="select"> <a href="research.html">Research</a> </nav>
             <nav class="select"> <a href="about.html">About Us</a> </nav>
             <nav class="select"> <a href="contact.html">Contact Us</a> </nav>
         </div>
-        <div class="search"><input type="text" id="searchInput" placeholder="Search for Products" onkeyup="filterProducts(this.value)"></div>
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="Search for Products" onkeyup="searchbar()">
+        </div>
          <div class="cart">
-            <a href="cart.html" style="font-size: 2rem;">🛒</a>
+            <a href="cart.html" style="font-size: 32px;">🛒</a>
          </div>
     </div>
 
@@ -209,5 +220,6 @@
     </footer>
     
     
+    <script src="../js/script.js"></script>
 </body>
 </html>

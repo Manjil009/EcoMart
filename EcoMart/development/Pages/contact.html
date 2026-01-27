@@ -1,25 +1,10 @@
 <html>
-
 <head>
+    <meta charset="UTF-8">
     <title>Home</title>
     <link rel="stylesheet" href="../CSS/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .navbar {
-            flex-shrink: 0;
-        }
-
         .contact-header {
             background-color: #f0fdf0;
             padding: 60px 5%;
@@ -30,13 +15,13 @@
 
         .contact-header h1 {
             color: #009E0F;
-            font-size: 2.5rem;
+            font-size: 40px;
             margin: 0;
         }
 
         .contact-header p {
             color: #555;
-            font-size: 1.1rem;
+            font-size: 18px;
             margin: 10px 0 0 0;
         }
 
@@ -58,7 +43,7 @@
 
         .contact-info h2 {
             color: #FF9900;
-            font-size: 1.8rem;
+            font-size: 29px;
             margin-bottom: 20px;
         }
 
@@ -93,7 +78,7 @@
             color: #009E0F;
             margin-top: 0;
             margin-bottom: 20px;
-            font-size: 1.5rem;
+            font-size: 24px;
         }
 
         .Contact-Form label {
@@ -101,7 +86,7 @@
             margin-bottom: 5px;
             color: #333;
             font-weight: bold;
-            font-size: 0.95rem;
+            font-size: 15px;
         }
 
         .Contact-Form input[type="text"],
@@ -111,7 +96,7 @@
             margin-bottom: 5px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            font-size: 0.95rem;
+            font-size: 15px;
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
@@ -134,7 +119,7 @@
             padding: 12px 30px;
             border: none;
             border-radius: 5px;
-            font-size: 1rem;
+            font-size: 16px;
             font-weight: bold;
             cursor: pointer;
             transition: 0.3s;
@@ -161,7 +146,7 @@
           </a>
       </div>    
         <div class="links">
-            <nav class="select"> <a href="home.html">Home</a> </nav>
+            <nav class="select"> <a href="../home.html">Home</a> </nav>
             <nav class="select"> <a href="products.html">Products</a> </nav>
             <nav class="select"> <a href="blog.html">Blog</a> </nav>
             <nav class="select"> <a href="research.html">Research</a> </nav>
@@ -170,7 +155,7 @@
         </div>
          
           <div class="cart">
-            <a href="cart.html" style="font-size: 2rem;">🛒</a>
+            <a href="cart.html" style="font-size: 32px;">🛒</a>
          </div>
  </div>
         <div class="contact-header">
@@ -209,21 +194,21 @@
         <form id="contactForm" onsubmit="validateForm(event)">
             <label>Full Name:</label>
         <input type="text" id="fullname" name="fullname" placeholder="Your Full Name">
-        <span id="nameError" style="color: red; font-size: 0.9rem;"></span>
+        <span id="nameError" style="color: red; font-size: 14.5px;"></span>
         <br><br>
 
         <label>Email:</label>
         <input type="text" id="email" name="Email" placeholder="Your Email Address">
-        <span id="emailError" style="color: red; font-size: 0.9rem;"></span>
+        <span id="emailError" style="color: red; font-size: 14.5px;"></span>
         <br><br>
 
         <label>tel:</label>
         <input type="text" id="phone" name="phone" placeholder="Your Phone Number">
-        <span id="phoneError" style="color: red; font-size: 0.9rem;"></span>
+        <span id="phoneError" style="color: red; font-size: 14.5px;"></span>
         <br><br>
 
         <textarea rows="10" cols="25" id="message" placeholder="Enter your message"></textarea>
-        <span id="messageError" style="color: red; font-size: 0.9rem;"></span>
+        <span id="messageError" style="color: red; font-size: 14.5px;"></span>
         <br><br>
 
         <input type="submit" value="submit button">
